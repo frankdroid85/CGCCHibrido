@@ -47,7 +47,7 @@ set(EXERCISES
     Hello3D
     TriangleTex
     SpherePhong
-   
+    Tarefa2
 )
 
 add_compile_options(-Wno-pragmas)
@@ -75,7 +75,16 @@ endif()
 foreach(EXERCISE ${EXERCISES})
     if(${EXERCISE} STREQUAL "Hello3D")
         add_executable(${EXERCISE} src/Tarefa\ 1/Hello3D.cpp ${GLAD_C_FILE})
-        set_target_properties(${EXERCISE} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Tarefa\ 1)
+        set_target_properties(${EXERCISE} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/Tarefa 1")
+    elseif(${EXERCISE} STREQUAL "SpherePhong")
+        add_executable(${EXERCISE} src/SpherePhong.cpp ${GLAD_C_FILE})
+        set_target_properties(${EXERCISE} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/SpherePhong)
+    elseif(${EXERCISE} STREQUAL "TriangleTex")
+        add_executable(${EXERCISE} src/TriangleTex.cpp ${GLAD_C_FILE})
+        set_target_properties(${EXERCISE} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/TriangleTex)
+    elseif(${EXERCISE} STREQUAL "Tarefa2")
+        add_executable(${EXERCISE} src/Tarefa\ 2/Hello3D.cpp ${GLAD_C_FILE})
+        set_target_properties(${EXERCISE} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/Tarefa 2")
     else()
         add_executable(${EXERCISE} src/${EXERCISE}.cpp ${GLAD_C_FILE})
         set_target_properties(${EXERCISE} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${EXERCISE})
