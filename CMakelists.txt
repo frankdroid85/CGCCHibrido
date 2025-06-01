@@ -49,6 +49,7 @@ set(EXERCISES
     SpherePhong
     Tarefa2
     Hello3D_AV1
+    Hello3D_AV2
 )
 
 add_compile_options(-Wno-pragmas)
@@ -89,6 +90,9 @@ foreach(EXERCISE ${EXERCISES})
     elseif(${EXERCISE} STREQUAL "Hello3D_AV1")
         add_executable(${EXERCISE} src/Atividade\ Vivencial\ 1/Hello3D.cpp ${GLAD_C_FILE})
         set_target_properties(${EXERCISE} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/Atividade Vivencial 1")
+    elseif(${EXERCISE} STREQUAL "Hello3D_AV2")
+        add_executable(${EXERCISE} src/Atividade\ Vivencial\ 2/Hello3D.cpp ${GLAD_C_FILE})
+        set_target_properties(${EXERCISE} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/Atividade Vivencial 2")
     else()
         add_executable(${EXERCISE} src/${EXERCISE}.cpp ${GLAD_C_FILE})
         set_target_properties(${EXERCISE} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${EXERCISE})
